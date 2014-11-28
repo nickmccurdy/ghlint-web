@@ -22,8 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* GET home page. */
-app.get('/', function(req, res, next) {
-  ghlint.lintAll(function (err, results) {
+app.get('/:user/:repo', function(req, res, next) {
+  var repo = req.params.user + '/' + req.params.repo;
+  ghlint.lintAll(repo, function (err, results) {
     if (err) {
       next(err);
     } else {
@@ -32,6 +33,11 @@ app.get('/', function(req, res, next) {
         results: results
       });
     }
+  });
+});
+app.get('/', function(req, res, next) {
+  res.render('index', {
+    title: 'Express'
   });
 });
 
