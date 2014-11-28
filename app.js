@@ -29,16 +29,13 @@ app.get('/:user/:repo', function(req, res, next) {
       next(err);
     } else {
       res.render('index', {
-        title: 'Express',
         results: results
       });
     }
   });
 });
 app.get('/', function(req, res, next) {
-  res.render('index', {
-    title: 'Express'
-  });
+  res.render('index');
 });
 
 // catch 404 and forward to error handler
