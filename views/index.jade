@@ -2,6 +2,8 @@ extends layout
 
 block content
   h1 ghlint
+  form(action='/')
+    input(name='repo', autofocus)
   if results
     h2 Results
     ul

@@ -35,7 +35,11 @@ app.get('/:user/:repo', function(req, res, next) {
   });
 });
 app.get('/', function(req, res, next) {
-  res.render('index');
+  if (req.query.repo) {
+    res.redirect('/' + req.query.repo);
+  } else {
+    res.render('index');
+  }
 });
 
 // catch 404 and forward to error handler
