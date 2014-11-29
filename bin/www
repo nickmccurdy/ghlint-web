@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-var dotenv = require('dotenv');
-dotenv.load();
+require('node-env-file');
 
 var debug = require('debug')('ghlint-web');
 var app = require('../app');
