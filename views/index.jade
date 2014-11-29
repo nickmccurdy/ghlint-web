@@ -1,11 +1,29 @@
 extends layout
 
 block content
-  h1 ghlint
-  form(action='/')
-    input(name='repo', autofocus)
+  .page-header
+    h1
+      a(href='/') ghlint
+      | 
+      small A linter for GitHub projects.
+  form(action='/', role='form')
+    .form-group
+      label(for='repo') Repository
+      .input-group
+        input#repo.form-control(name='repo', placeholder='user/repository', autofocus)
+        span.input-group-btn
+          input.btn.btn-primary(type='submit', value='Lint')
   if results
     h2 Results
-    ul
-      for result in results
-        li #{result.message}: #{result.result}
+    table.table
+      thead
+        tr
+          th Linter
+          th Status
+      tbody
+        for result in results
+          tr
+            td= result.message
+            td= result.result
+  script(src='http://codepen.io/assets/libs/fullpage/jquery.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
