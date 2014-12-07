@@ -15,14 +15,14 @@ block content
           input.btn.btn-primary(type='submit', value='Lint')
   if results
     h2 Results
-    table.table
+    table.table.table-bordered
       thead
         tr
           th Linter
           th Status
       tbody
         for result in results
-          tr
+          tr(class=(result.result ? 'success' : 'danger'))
             td= result.message
             td= result.result
   script(src='http://codepen.io/assets/libs/fullpage/jquery.js')
