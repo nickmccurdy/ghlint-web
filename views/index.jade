@@ -14,16 +14,18 @@ block content
         span.input-group-btn
           input.btn.btn-primary(type='submit', value='Lint')
   if results
-    h2 Results
-    table.table.table-bordered
-      thead
-        tr
-          th Linter
-          th Status
-      tbody
-        for result in results
-          tr(class=(result.result ? 'success' : 'danger'))
-            td= result.message
-            td= result.result
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title= repo
+      table.table.table-bordered
+        thead
+          tr
+            th Linter
+            th Status
+        tbody
+          for result in results
+            tr(class=(result.result ? 'success' : 'danger'))
+              td= result.message
+              td= result.result
   script(src='http://codepen.io/assets/libs/fullpage/jquery.js')
   script(src='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')

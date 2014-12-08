@@ -29,7 +29,8 @@ app.get('/:user/:repo', function(req, res, next) {
       next(err);
     } else {
       res.render('index', {
-      results: results
+        results: results,
+        repo: repo
       });
     }
   });
