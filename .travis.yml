@@ -3,6 +3,4 @@ deploy:
   provider: heroku
   api_key:
     secure: IdmJn4SoBXZp/5z88sRHuw0gH8EB+LEvhru2c5eFOqmT+qDiw139YgpgJ/Ctl8gulAYsZ+LVTJpyAZaeIc3UYFG2uDvqY9XSCxAY3ZQ6viuj/rtgZ2XXClTldPBsJDw5BbbuLLxFH4uhmmpcD+6SbdNYOXGEmQrlL9NWiC6zHGU=
-  app: ghlint-web
-  on:
-    repo: nicolasmccurdy/ghlint-web
+  app: ghlint
