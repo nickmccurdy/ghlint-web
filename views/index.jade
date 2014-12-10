@@ -18,13 +18,9 @@ block content
       .panel.panel-default
         .panel-heading
           h3.panel-title= repo.name
-        table.table.table-bordered
-          thead
-            tr
-              th Linter
-              th Status
-          tbody
-            for result in repo.results
-              tr(class=(result.result ? 'success' : 'danger'))
-                td= result.message
-                td= result.result
+        ul.list-group
+          for result in repo.results
+            li.list-group-item(class='list-group-item-'+(result.result ? 'success' : 'danger'))
+              span.glyphicon(class='glyphicon-'+(result.result ? 'ok' : 'remove'))
+              | 
+              span= result.message
