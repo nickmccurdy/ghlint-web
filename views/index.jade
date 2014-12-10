@@ -13,17 +13,18 @@ block content
         input#repo.form-control(name='repo', placeholder='user/repository', autofocus)
         span.input-group-btn
           input.btn.btn-primary(type='submit', value='Lint')
-  if results
-    .panel.panel-default
-      .panel-heading
-        h3.panel-title= repo
-      table.table.table-bordered
-        thead
-          tr
-            th Linter
-            th Status
-        tbody
-          for result in results
-            tr(class=(result.result ? 'success' : 'danger'))
-              td= result.message
-              td= result.result
+  if repos
+    for repo in repos
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title= repo.name
+        table.table.table-bordered
+          thead
+            tr
+              th Linter
+              th Status
+          tbody
+            for result in repo.results
+              tr(class=(result.result ? 'success' : 'danger'))
+                td= result.message
+                td= result.result

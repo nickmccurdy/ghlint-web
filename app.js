@@ -23,8 +23,21 @@ app.get('/:user/:repo', function(req, res, next) {
       next(err);
     } else {
       res.render('index', {
-        results: results,
-        repo: repo
+        repos: [{
+          name: repo,
+          results: results
+        }]
+      });
+    }
+  });
+});
+app.get('/:user', function(req, res, next) {
+  ghlint.lintUserRepos(req.params.user, function (err, repos) {
+    if (err) {
+      next(err);
+    } else {
+      res.render('index', {
+        repos: repos
       });
     }
   });
