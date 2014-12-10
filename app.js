@@ -18,7 +18,7 @@ app.use(logger('dev'));
 /* GET home page. */
 app.get('/:user/:repo', function(req, res, next) {
   var repo = req.params.user + '/' + req.params.repo;
-  ghlint.lintAll(repo, function (err, results) {
+  ghlint.lintRepo(repo, function (err, results) {
     if (err) {
       next(err);
     } else {
