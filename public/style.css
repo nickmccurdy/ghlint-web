@@ -1,3 +1,12 @@
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  margin: 10px 15px;
+}
+
 .icon-column {
   margin-right: 15px;
 }

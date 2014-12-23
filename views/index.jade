@@ -15,11 +15,9 @@ block content
           input.btn.btn-primary(type='submit', value='Lint')
   if repos
     for repo in repos
-      .panel.panel-default
-        .panel-heading
-          h3.panel-title= repo.name
-        ul.list-group
-          for result in repo.results
-            li.list-group-item(class='text-'+(result.result ? 'success' : 'danger'))
-              span.glyphicon.icon-column(class='glyphicon-'+(result.result ? 'ok' : 'remove'))
-              span= result.message
+      h2= repo.name
+      ul.checklist
+        for result in repo.results
+          li(class='text-'+(result.result ? 'success' : 'danger'))
+            span.glyphicon.icon-column(class='glyphicon-'+(result.result ? 'ok' : 'remove'))
+            span= result.message
