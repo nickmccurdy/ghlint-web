@@ -17,23 +17,23 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* GET home page. */
-app.get('/:user/:repo', function(req, res, next) {
-  var repo = req.params.user + '/' + req.params.repo;
-  ghlint.lintRepo(repo, function (err, results) {
+app.get('/:owner/:repo', function(req, res, next) {
+  ghlint.lintRepo(req.params.owner, req.params.repo, function (err, results) {
     if (err) {
       next(err);
     } else {
       res.render('index', {
         repos: [{
-          name: repo,
+          owner: req.params.owner,
+          name: req.params.repo,
           results: results
         }]
       });
     }
   });
 });
-app.get('/:user', function(req, res, next) {
-  ghlint.lintUserRepos(req.params.user, function (err, repos) {
+app.get('/:owner', function(req, res, next) {
+  ghlint.lintReposByOwner(req.params.owner, function (err, repos) {
     if (err) {
       next(err);
     } else {
