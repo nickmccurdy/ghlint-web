@@ -16,6 +16,14 @@ app.use(favicon(__dirname + '/favicon.png'));
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// view helpers
+app.locals.colorClass = function (result) {
+  return 'text-' + (result ? 'success' : 'danger');
+};
+app.locals.iconClass = function (result) {
+  return 'glyphicon-' + (result ? 'ok' : 'remove');
+};
+
 /* GET home page. */
 app.get('/:owner/:repo', function(req, res, next) {
   ghlint.lintRepo(req.params.owner, req.params.repo, function (err, results) {

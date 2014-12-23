@@ -21,6 +21,6 @@ block content
         strong= repo.name
       ul.checklist
         for result in repo.results
-          li(class='text-'+(result.result ? 'success' : 'danger'))
-            span.glyphicon.icon-column(class='glyphicon-'+(result.result ? 'ok' : 'remove'))
+          li(class=colorClass(result.result))
+            span.glyphicon.icon-column(class=iconClass(result.result))
             span= result.message
