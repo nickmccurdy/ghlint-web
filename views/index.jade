@@ -16,9 +16,10 @@ block content
   if repos
     for repo in repos
       h2
-        span= repo.owner
+        a(href='https://github.com/'+repo.owner)= repo.owner
         span.text-muted  / 
-        strong= repo.name
+        strong
+          a(href='https://github.com/'+repo.owner+'/'+repo.name)= repo.name
       ul.checklist
         for result in repo.results
           li(class=colorClass(result.result))
