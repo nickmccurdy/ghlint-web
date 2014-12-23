@@ -7,10 +7,10 @@ block content
       | 
       small A linter for GitHub projects.
   form(action='/', role='form')
+    span#linter-help.help-block Choose an owner or repository to lint.
     .form-group
-      label(for='repo') Repository
       .input-group
-        input#repo.form-control(name='repo', placeholder='owner/repository', autofocus)
+        input.form-control(name='repo', placeholder='owner or owner/repository', aria-describedby='linter-help', autofocus)
         span.input-group-btn
           input.btn.btn-primary(type='submit', value='Lint')
   if repos
