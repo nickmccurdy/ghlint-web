@@ -1,10 +1,19 @@
 /* page layout */
 
+body {
+  font-size: 16px;
+}
+
 .container {
   max-width: 600px;
 }
 
 /* results */
+
+h2 {
+  font-size: 1.25em;
+  font-weight: normal;
+}
 
 .checklist {
   list-style: none;
