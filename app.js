@@ -14,6 +14,7 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 app.use(favicon(__dirname + '/favicon.png'));
 app.use(logger('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 /* GET home page. */
 app.get('/:user/:repo', function(req, res, next) {

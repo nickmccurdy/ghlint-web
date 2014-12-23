@@ -20,7 +20,6 @@ block content
           h3.panel-title= repo.name
         ul.list-group
           for result in repo.results
-            li.list-group-item(class='list-group-item-'+(result.result ? 'success' : 'danger'))
-              span.glyphicon(class='glyphicon-'+(result.result ? 'ok' : 'remove'))
-              | 
+            li.list-group-item(class='text-'+(result.result ? 'success' : 'danger'))
+              span.glyphicon.icon-column(class='glyphicon-'+(result.result ? 'ok' : 'remove'))
               span= result.message
