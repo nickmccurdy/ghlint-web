@@ -1,3 +1,11 @@
+/* page layout */
+
+.container {
+  max-width: 600px;
+}
+
+/* results */
+
 .checklist {
   list-style: none;
   padding: 0;
