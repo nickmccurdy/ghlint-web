@@ -68,6 +68,14 @@ app.use(function(req, res, next) {
 
 // error handlers
 
+// set the status of all 'Not Found' errors to 404
+app.use(function (err, req, res, next) {
+  if (err.message === 'Not Found') {
+    err.status = 404;
+  }
+  next(err);
+});
+
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
