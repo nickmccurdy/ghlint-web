@@ -15,6 +15,7 @@ block content
           input.btn.btn-primary(type='submit', value='Lint')
   if repos
     for repo in repos
+      hr
       h2
         a(href='https://github.com/'+repo.owner)= repo.owner
         span.text-muted  / 
@@ -25,3 +26,9 @@ block content
           li(class=colorClass(result.result))
             span.glyphicon.icon-column(class=iconClass(result.result))
             = result.message
+  footer
+    hr
+    p
+      | © 2014 Nicolas McCurdy
+      br
+      | not affiliated with <a href="https://github.com/">GitHub</a>
