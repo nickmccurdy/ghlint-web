@@ -1,18 +1,13 @@
 extends layout
 
 block content
-  .page-header
-    h1
-      a(href='/') ghlint
-      | 
-      small A linter for GitHub projects.
-  form(action='/', role='form')
-    span#linter-help.help-block Choose an owner or repository to lint.
-    .form-group
-      .input-group
-        input.form-control(name='repo', placeholder='owner or owner/repository', aria-describedby='linter-help', autofocus)
-        span.input-group-btn
-          input.btn.btn-primary(type='submit', value='Lint')
+  h1: a(href='/') ghlint
+  p A linter for GitHub projects.
+  form.pure-form.query-form(action='/' role='form')
+    legend#linter-help Choose an owner or repository to lint.
+    input(name='repo', placeholder='owner/repository', aria-describedby='linter-help', autofocus)
+    | 
+    input.pure-button.pure-button-primary(type='submit', value='Lint')
   if repos
     for repo in repos
       hr
@@ -24,7 +19,7 @@ block content
       ul.checklist
         for result in repo.results
           li(class=colorClass(result.result))
-            span.glyphicon.icon-column(class=iconClass(result.result))
+            span.fa.fa-fw.icon-column(class=iconClass(result.result))
             = result.message
   footer
     hr

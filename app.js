@@ -18,10 +18,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // view helpers
 app.locals.colorClass = function (result) {
-  return 'text-' + (result ? 'success' : 'danger');
+  return result ? 'pass' : 'fail';
 };
 app.locals.iconClass = function (result) {
-  return 'glyphicon-' + (result ? 'ok' : 'remove');
+  return 'fa-' + (result ? 'check' : 'remove');
 };
 
 /* GET home page. */
