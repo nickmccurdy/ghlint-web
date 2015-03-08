@@ -19,15 +19,12 @@ footer {
 h2 {
   font-size: 1.25em;
   font-weight: normal;
+  margin-bottom: 0;
 }
 
 .checklist {
   list-style: none;
   padding-left: 35px;
-}
-
-.checklist li {
-  margin: 10px 0;
 }
 
 .icon-column {
