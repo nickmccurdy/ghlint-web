@@ -23,15 +23,11 @@ h2 {
 
 .checklist {
   list-style: none;
-  padding: 0;
+  padding-left: 35px;
 }
 
 .checklist li {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 10px 15px;
-  margin-left: 35px;
+  margin: 10px 0;
 }
 
 .icon-column {
