@@ -14,8 +14,8 @@ block content
         span.input-group-btn
           input.btn.btn-primary(type='submit', value='Lint')
   if repos
+    hr
     for repo in repos
-      hr
       h2(class=colorClass(!repo.results.length))
         span.glyphicon.icon-column(class=iconClass(!repo.results.length))
         a(href='https://github.com/'+repo.owner)= repo.owner
