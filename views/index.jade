@@ -16,16 +16,15 @@ block content
   if repos
     for repo in repos
       hr
-      h2
+      h2(class=colorClass(!repo.results.length))
+        span.glyphicon.icon-column(class=iconClass(!repo.results.length))
         a(href='https://github.com/'+repo.owner)= repo.owner
         span.text-muted  / 
         strong
           a(href='https://github.com/'+repo.owner+'/'+repo.name)= repo.name
       ul.checklist
         for result in repo.results
-          li(class=colorClass(result.result))
-            span.glyphicon.icon-column(class=iconClass(result.result))
-            = result.message
+          li= result
   footer
     hr
     p
