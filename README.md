@@ -1,3 +1,7 @@
+Deprecated
+==========
+Use [GitHub Community Profile](https://help.github.com/articles/viewing-your-community-profile/).
+
 ghlint-web
 ==========
 [![Build Status](https://travis-ci.org/nicolasmccurdy/ghlint-web.svg?branch=master)](https://travis-ci.org/nicolasmccurdy/ghlint-web)
